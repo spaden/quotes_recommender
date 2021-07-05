@@ -23,7 +23,6 @@ public class ClientController {
 		ResponseEntity<User[]> allUsers = rt.getForEntity("http://localhost:8080/array", User[].class);
 		User[] test = allUsers.getBody();
 		return test;
-		
 	}
 	
 }
