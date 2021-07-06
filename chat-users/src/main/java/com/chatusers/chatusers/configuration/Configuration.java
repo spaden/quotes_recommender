@@ -1,4 +1,4 @@
-package com.chatusers.chatusers;
+package com.chatusers.chatusers.configuration;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
