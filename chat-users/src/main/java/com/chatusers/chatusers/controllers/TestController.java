@@ -1,4 +1,4 @@
-package com.chatusers.chatusers;
+package com.chatusers.chatusers.controllers;
 
 import java.util.ArrayList;
 
@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.chatusers.chatusers.configuration.Configuration;
+import com.chatusers.chatusers.utils.ListUsers;
+import com.chatusers.chatusers.utils.User;
 
 @RestController
 public class TestController {
@@ -22,7 +24,7 @@ public class TestController {
 	@GetMapping("/array")
 	public ArrayList<User> testing() {
 		ListUsers users = new ListUsers();
-		return users.allUsers;
+		return users.getAllUsers();
 	}
 	
 }

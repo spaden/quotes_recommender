@@ -1,4 +1,4 @@
-package com.chatusers.chatusers;
+package com.chatusers.chatusers.utils;
 
 import java.util.ArrayList;
 
@@ -14,8 +14,9 @@ public class ListUsers {
 			this.allUsers.add(newUser);
 		}
 	}
-	
-	public ArrayList<User> test() {
-		return this.allUsers;
+
+	public ArrayList<User> getAllUsers() {
+		return allUsers;
 	}
+	
 }

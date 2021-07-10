@@ -1,4 +1,4 @@
-package com.chatusers.chatusers;
+package com.chatusers.chatusers.utils;
 
 public class User {
 	private String name;
