@@ -11,7 +11,7 @@ import com.chatusers.chatusers.utils.ListUsers;
 import com.chatusers.chatusers.utils.User;
 
 @RestController
-public class TestController {
+public class chatcontroller {
 	
 	@Autowired
 	private Configuration config;

@@ -1,4 +1,4 @@
-package com.example.chatlogin;
+package com.example.chatlogin.table;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package com.example.chatlogin;
+package com.example.chatlogin.table;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

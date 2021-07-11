@@ -3,8 +3,9 @@ package com.example.chatlogin.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.chatlogin.LoginUsers;
-import com.example.chatlogin.LoginUsersRepository;
+import com.example.chatlogin.table.LoginUsers;
+import com.example.chatlogin.table.LoginUsersRepository;
+
 
 @Service
 public class LoginService {

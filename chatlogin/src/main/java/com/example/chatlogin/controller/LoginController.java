@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.chatlogin.LoginUsers;
 import com.example.chatlogin.service.LoginService;
+import com.example.chatlogin.table.LoginUsers;
 
 @RestController
 public class LoginController {
