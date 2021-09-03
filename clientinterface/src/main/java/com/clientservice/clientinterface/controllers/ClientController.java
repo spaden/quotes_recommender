@@ -23,13 +23,13 @@ public class ClientController {
 	
 	@GetMapping("/testClient")
 	public String test() {
-		String response = rt.getForObject(config.getChatusersAPI() +"/test", String.class);
+		String response = rt.getForObject(config.getMlmodel() +"/test", String.class);
 		return response;
 	}
 	
 	@GetMapping("/getUsers")
 	public User[] getAllUsers() {
-		ResponseEntity<User[]> allUsers = rt.getForEntity(config.getChatusersAPI()+"/array", User[].class);
+		ResponseEntity<User[]> allUsers = rt.getForEntity(config.getMlmodel()+"/array", User[].class);
 		User[] test = allUsers.getBody();
 		return test;
 	}
