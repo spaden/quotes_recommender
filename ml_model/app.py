@@ -32,7 +32,7 @@ def remove_noise(quote_word):
     return " ".join(currentQuote)
 
 
-@app.route('/')
+@app.route('/test')
 def index():
     return "Hello World"
    
