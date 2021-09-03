@@ -1,10 +1,18 @@
+import { Route } from 'react-router-dom'
 import './App.css'
-import InputComponent from './components/inputComponent'
+import Home from './view/Home'
+import SimilarQuotes from './view/SimilarQuotes'
 
 function App() {
+  
   return (
-    <div className="App">
-       <InputComponent />
+    <div className="container-fluid justify-content-center">
+        <Route path="/home">
+          <Home/>
+        </Route>
+        <Route path="/similarquotes">
+          <SimilarQuotes/>
+        </Route>
     </div>
   );
 }
