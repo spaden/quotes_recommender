@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     predictions: ['testing123'],
+    showPredictedModal: true,
     status: {
         isFetching: false,
         isFetched: false,
@@ -32,12 +33,16 @@ const mlPredictions = createSlice({
             status.isFetching = false
             status.isFetched = false
             status.error = true
+        },
+        SHOW_PREDICTED_MODAL(state) {
+            state.showPredictedModal = !state.showPredictedModal
         }
     }
 })
 export const { FETCH_PREDICTIONS_REQUEST,
                FETCH_PREDICTIONS_SUCCESS,
-               FETCH_PREDICTIONS_ERROR
+               FETCH_PREDICTIONS_ERROR,
+               SHOW_PREDICTED_MODAL
              } = mlPredictions.actions
 
 /* export const fetchMlPredictions = async (payload) => {

@@ -7,10 +7,10 @@ function App() {
   
   return (
     <div className="container-fluid justify-content-center">
-        <Route path="/home">
+        <Route path="/" exact>
           <Home/>
         </Route>
-        <Route path="/similarquotes">
+        <Route path="/similarquotes" exact>
           <SimilarQuotes/>
         </Route>
     </div>
