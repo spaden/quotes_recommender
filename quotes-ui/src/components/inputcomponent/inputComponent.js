@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import './inputComponentStyle.scss'
 import LoaderComponent from '../loader/loaderComponent';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faX } from '@fortawesome/free-solid-svg-icons'
 import { SHOW_PREDICTED_MODAL } from '../../store/similarPred'
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -24,8 +22,6 @@ function InputComponent(props) {
 
     const checkIfPlaceholder = (e) => {
       const textContent = e.currentTarget.textContent
-      console.log(textContent)
-      console.log(placeholder)
       if (textContent === placeholder) {
         e.currentTarget.textContent = ''
       }
@@ -70,10 +66,9 @@ function InputComponent(props) {
              onInput={onInputChange}
              onClick={checkIfPlaceholder}
              onBlur={checkIfEmpty}>
-             
+             {showPredictedModal ? predictedQuote() : ''}
         </div>
         {currentComponent()}
-        {showPredictedModal ? predictedQuote() : ''}
       </div>
     );
   }

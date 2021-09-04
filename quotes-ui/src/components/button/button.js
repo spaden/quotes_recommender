@@ -4,9 +4,10 @@ import './button.scss'
 function Button(props) {
     
     return (
-      <div className="buttoncomponent">
-
-      </div>
+      <button className="btn buttoncomponent"
+              onClick={props.onClick}>
+        {props.name}
+      </button>
     );
   }
 
