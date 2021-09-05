@@ -37,7 +37,7 @@ def index():
     return "Hello World"
    
 
-@app.route("/postTest", methods=['POST'])
+@app.route("/getSimilarQuote", methods=['POST'])
 def postTest():
     data = request.json
     

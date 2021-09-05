@@ -18,9 +18,9 @@ public class LoginController {
 	public String checkAndLoginUser(@RequestBody LoginUsers user) {
 		LoginUsers response = service.checkAuthenticated(user.getName(), user.getPassword());
 		if (response !=null) {
-			return "Exists";
+			return "true";
 		}else {
-			return "Not Exists";
+			return "false";
 		}
 	}
 }

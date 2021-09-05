@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import mlPredictionsReducer from './similarPred'
+import userStore from './user'
 
 const store = configureStore({
     reducer: {
-        mlPrediction: mlPredictionsReducer
+        mlPrediction: mlPredictionsReducer,
+        userStore: userStore
     }
 })
 

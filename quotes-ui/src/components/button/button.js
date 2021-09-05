@@ -5,7 +5,8 @@ function Button(props) {
     
     return (
       <button className="btn buttoncomponent"
-              onClick={props.onClick}>
+              onClick={props.onClick}
+              disabled={props.isFetching}>
         {props.name}
       </button>
     );

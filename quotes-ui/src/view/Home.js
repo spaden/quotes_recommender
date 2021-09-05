@@ -15,7 +15,7 @@ function Home(props) {
       // 
     }
     useEffect(() => {
-      console.log(test)
+      // console.log(test)
     }, [test])
     
     

@@ -1,8 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
+import service from '../service/service'
 
 const initialState = {
-    predictions: ['testing123'],
-    showPredictedModal: true,
+    predictions: '',
+    showPredictedModal: false,
+    userInput: '',
     status: {
         isFetching: false,
         isFetched: false,
@@ -19,14 +21,15 @@ const mlPredictions = createSlice({
             status.isFetching = true
             status.isFetched = false
             status.error = false 
-            state.predictions = []
+            state.predictions = ''
         },
         FETCH_PREDICTIONS_SUCCESS(state, payload) {
             const { status } = state
             status.isFetching = false
             status.isFetched = true
             status.error = false
-            state.predictions = payload
+            state.predictions = payload.payload.res
+            state.showPredictedModal = true
         },
         FETCH_PREDICTIONS_ERROR(state) {
             const { status } = state
@@ -36,22 +39,27 @@ const mlPredictions = createSlice({
         },
         SHOW_PREDICTED_MODAL(state) {
             state.showPredictedModal = !state.showPredictedModal
-        }
+        },
+        USER_INPUT_CHANGE(state, payload) {
+            state.userInput = payload.payload
+        } 
     }
 })
 export const { FETCH_PREDICTIONS_REQUEST,
                FETCH_PREDICTIONS_SUCCESS,
                FETCH_PREDICTIONS_ERROR,
-               SHOW_PREDICTED_MODAL
+               SHOW_PREDICTED_MODAL,
+               USER_INPUT_CHANGE
              } = mlPredictions.actions
 
-/* export const fetchMlPredictions = async (payload) => {
-    mlPredictionsActions.FETCH_PREDICTIONS_REQUEST()
+export const fetchMlPredictions = (payload) => async dispatch => {
+    dispatch(FETCH_PREDICTIONS_REQUEST())
     try {
-        mlPredictionsActions.FETCH_PREDICTIONS_SUCCESS(['testing', 'testing'])
-    } catch(e) {
-        mlPredictionsActions.FETCH_PREDICTIONS_ERROR()
+        const response = await service.fetchSimilarQuote(payload)
+        dispatch(FETCH_PREDICTIONS_SUCCESS(response.data))
+    } catch (error) {
+        dispatch(FETCH_PREDICTIONS_ERROR())
     }
-} */
+}
 
 export default mlPredictions.reducer
