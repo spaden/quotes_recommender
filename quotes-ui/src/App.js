@@ -21,9 +21,6 @@ function App() {
   return (
     <div className="container-fluid justify-content-center">
         <Route path="/" exact>
-          <Home/>
-        </Route>
-        <Route path="/similarquotes" exact>
           <SimilarQuotes/>
         </Route>
     </div>

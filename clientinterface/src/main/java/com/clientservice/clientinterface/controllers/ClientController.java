@@ -29,8 +29,10 @@ public class ClientController {
 	
 	@GetMapping("/testClient")
 	public String test() {
-		String response = rt.getForObject(config.getMlmodel() +"/test", String.class);
-		return response;
+		System.out.println(config.getMlmodel());
+		System.out.println(config.getChatloginAPI());
+		// String response = rt.getForObject(config.getMlmodel() +"/test", String.class);
+		return "test";
 	}
 	
 	@PostMapping("/getSimilarQuote")
